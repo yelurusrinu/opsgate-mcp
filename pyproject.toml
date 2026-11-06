@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "opsgate-mcp"
+version = "0.1.0"
+description = "Policy-gated MCP server for infra agents: allow / ask / block per tool, argument-bound single-use approvals, audit log."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Yeluru Sreenivasulu" }]
+dependencies = [
+  "mcp>=2,<3",
+  "ecs-safe-deploy @ git+https://github.com/yelurusrinu/ecs-safe-deploy",
+  "aws-cost-audit @ git+https://github.com/yelurusrinu/aws-cost-audit",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+opsgate = "opsgate.cli:main"
+
+[tool.setuptools]
+packages = ["opsgate"]

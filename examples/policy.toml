@@ -1,0 +1,11 @@
+default = "ask"
+approval_ttl_seconds = 1800
+
+[tools]
+"ecs_resolve" = "allow"
+"ecs_tags" = "allow"
+"ecs_wait" = "allow"
+"ecs_deploy_dry_run" = "allow"
+"cost_*" = "allow"
+"ecs_deploy" = "ask"
+"ecs_revert" = "ask"
